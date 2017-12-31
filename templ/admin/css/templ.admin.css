@@ -1,0 +1,305 @@
+/* BAVA.TEST.CMS 2 CSS
+
+TEMPLATE ADMIN
+
+*/
+body {
+	background-color: #B0E0E6;
+}
+.wrap {
+	display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px 100% 550px;
+	
+}
+#upbutton {
+    display:none;
+	position:fixed;
+	z-index:900;	
+	top:94%;
+	left:78%;
+	width: 80px;
+	height: 37px;
+	cursor:pointer;
+	background: url(../images/topbut-min.png);	
+}
+hr {
+	color: black;
+	box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+.logout {
+	background-color: #B0E0E6;	
+}
+/* HEADER */
+.header {
+	grid-column: span 12;
+
+}
+.header-main {
+	position: fixed;
+	z-index: 998;
+	width: 100%;
+	background-color: #708090;
+	box-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+.logo {
+	position: absolute;
+	width: 131px;
+	height: 40px;
+	background-image: url(../images/logo.png);	
+}
+.exit {
+	float: right;
+	width: 131px;
+	height: 40px;
+	cursor: pointer;
+	background-image: url(../images/exit.png);	
+}
+.opt {
+	position: absolute;
+	margin-left: 85%;
+	width: 202px;
+	height: 40px;
+	background-image: url(images/opt.png);	
+}
+.header-menu {
+	width: 60%;
+	height: 10%;
+	margin: 0 auto;
+	font-size: 1.3vw;
+}
+.menu-but {
+	display: none;
+	width: 76px;
+	height: 37px;
+	margin: 0 auto;
+	cursor: pointer;
+	background-image: url(../images/menu-but.png);
+}
+.head1 {
+	display: inline-block;
+	padding: 1% 3%;
+}
+
+
+/* CENTER */
+.menu-left {
+	grid-column: span 2;
+	background-color: #B0E0E6;	
+}
+.menu-left-main {
+	width: 60%;
+	margin: 20px auto;
+	font-size: 1.4vw;
+	/*border: 1px solid red;*/
+}
+.left-img {
+	min-width: 100%;
+	height: 100%;
+	background-image: url(../images/img111.jpg);
+}
+img {
+	position: relative;
+	top: 6px;
+	left: 3px;
+	width: 104%;
+	box-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+
+.menu-rigth {
+	grid-column: span 2;
+	padding: 2px 0 0 0;
+	background-color: #B0E0E6;	
+	margin-bottom: 10px; 
+}
+.menu-rigth-main {
+	width: 100%;
+	/*margin: 20px auto;*/
+	font-size: 1.4vw;
+	/*border: 1px solid red;*/
+}
+
+.cat {
+	margin: 3% 3% 1% 1%;
+	padding: 7%;
+	background-color: #778899;
+	box-shadow: 0 0 7px rgba(0,0,0,0.4);
+}
+
+.cat2 {
+	margin: 1% 0;
+	padding: 1% 2% 1%;
+	background-color: #ADD8E6;
+	box-shadow: 0 0 7px rgba(0,0,0,0.4);
+}
+
+.cat3 {
+	max-width: 500px;
+	margin: 1% 0;
+	padding: 1% 1% 1% 2%;
+	font-size: 1.4vw;
+	background-color: #ADD8E6;
+	box-shadow: 0 0 7px rgba(0,0,0,0.4);
+}
+.cat4 {
+	float: right;
+	color: red;
+}
+.form {
+	min-width: 98%;	
+	font-size: 1.2vw;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.content {
+	grid-column: span 10;
+	background-color: #B0E0E6;
+}
+.main {
+	margin: 1% 1% 2% 1%;
+	font-size: 1.4vw;
+}
+
+.tex {
+	font-size: 4vw;	
+	margin-left: 25px;
+}
+
+
+/* BLOCK */
+.block {
+	grid-column: span 12;
+	background-color: #778899;
+	/*	
+	background: url(../images/fon3.png) center no-repeat;
+	background-size: cover;*/
+}
+
+/* FOTER */
+.footer {
+	grid-column: span 12;
+	background-color: #ADD8E6;	
+	background: url(../images/fon3.png) center no-repeat;
+	background-size: cover;
+}
+.footer-main {
+	width: 70%;
+	height: 100px;
+	margin: 304px auto 0;
+	font-size: 1.1vw;
+	/*border: 1px solid red;*/ 	
+}
+
+
+.fot1 {
+	display: inline-block;
+	padding: 3% 6%;
+}
+
+
+
+
+@media screen and (max-width:  960px) {
+	.header-menu {
+		width: 90%;
+		font-size: 2vw;
+	}
+	img {
+		margin-bottom: 10px;
+	}
+	.menu-left {
+		display: none;
+	}
+	.content {
+		grid-column: span 10;
+		background-color: #B0E0E6;	
+	}
+	.cat4 {
+		float: none;
+		color: red;
+	}
+	.form {	
+		font-size: 2vw;
+	}
+	.main {
+		margin: 1% 1% 2% 1%;
+		font-size: 2vw;
+	}
+	.menu-rigth {
+		grid-column: span 2;
+	}
+	.menu-rigth-main {
+		font-size: 2vw;
+	}
+	.footer-main {
+		margin: 224px auto 0;
+		width: 50%;
+		font-size: 3vw;	
+	}
+	.fot1 {
+		padding: 6% 6%;
+	}
+
+}
+@media screen and (max-width:  768px) {
+
+
+}
+
+@media screen and (max-width:  560px) {
+	.wrap {
+		display: grid;
+    	grid-template-columns: repeat(12, 1fr);
+    	grid-template-rows: 50px 100% 550px;
+	
+	}
+	.header-main {
+		font-size: 4vw;
+	}
+	.menu-rigth {
+		grid-column: span 12;
+	}
+	.menu-rigth-main {
+		font-size: 5vw;
+		text-align: center;
+	}
+	.content {
+		grid-column: span 12;
+		background-color: #B0E0E6;	
+	}
+	.main {
+		margin: 2%;
+		font-size: 1.4vw;
+	}
+	.cat {
+		margin: 2%;
+	}
+	.cat2 {
+		margin: 2% 0;
+		font-size: 5vw;
+	}
+	.cat3 {
+		font-size: 5vw;
+	}
+	.main {
+		font-size: 3vw;
+	}
+	.form {	
+		font-size: 3vw;
+	}
+	.footer-main {
+		margin: 224px auto 0;
+		width: 50%;
+		font-size: 5vw;	
+	}
+	.fot1 {
+		padding: 6% 4%;
+	}
+
+}
+
