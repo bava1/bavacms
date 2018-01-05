@@ -1,0 +1,139 @@
+####################################################
+## File .htaccess
+## Package bava.cms Version 1.5 2017
+## Free Software. Open Source.
+####################################################
+
+#Your encoding
+AddDefaultCharset utf-8
+
+#Your home page.
+DirectoryIndex index.html index.php
+
+Options -Indexes
+
+##Uncomment the team and add the address of your site
+#ErrorDocument 404 http://your website/404.html
+
+#Block bad bots and robots.
+SetEnvIfNoCase user-Agent ^FrontPage [NC,OR]
+SetEnvIfNoCase user-Agent ^Java.* [NC,OR]
+SetEnvIfNoCase user-Agent ^Microsoft.URL [NC,OR]
+SetEnvIfNoCase user-Agent ^MSFrontPage [NC,OR]
+SetEnvIfNoCase user-Agent ^Offline.Explorer [NC,OR]
+SetEnvIfNoCase user-Agent ^[Ww]eb[Bb]andit [NC,OR]
+SetEnvIfNoCase user-Agent ^Zeus [NC]
+<limit get="" post="" head="">
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot
+</limit>
+
+#Protect .htaccess file
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  READ THIS COMPLETELY IF YOU CHOOSE TO USE THIS FILE
+#
+# The line just below this section: 'Options +FollowSymLinks' may cause problems
+# with some server configurations.  It is required for use of mod_rewrite, but may already
+# be set by your server administrator in a way that dissallows changing it in
+# your .htaccess file.  If using it causes your server to error out, comment it out (add # to
+# beginning of line), reload your site in your browser and test your sef url's.  If they work,
+# it has been set by your server administrator and you do not need it set here.
+#
+#####################################################
+
+#####################################################
+#
+# ПРОЧИТАЙТЕ ЭТО ПОЛНОСТЬЮ, ЕСЛИ ВЫ ВЫБИРАЕТЕ ИСПОЛЬЗОВАТЬ ЭТОТ ФАЙЛ
+# Строка чуть ниже этого раздела: «Параметры + FollowSymLinks» могут вызвать проблемы
+# с некоторыми конфигурациями сервера. Он требуется для использования mod_rewrite, но может быть уже 
+# установлен администратором вашего сервера таким образом, который не разрешает его изменение в
+# ваш файл .htaccess. Если вы используете его, это приведет к ошибке сервера, закомментируйте его (добавьте
+# начало строки), перезагрузите свой сайт в своем браузере и проверьте URL-адрес вашего sef. Если они работают, 
+# он был установлен администратором вашего сервера, и вам не нужно его устанавливать здесь.
+#
+#####################################################
+
+
+##  Can be commented out if causes errors, see notes above.
+Options +FollowSymLinks
+
+#
+#  mod_rewrite in use
+# ESLI NA SAITE BELIY EKRAN - RASKOMMENTIROVAT' STROKU NIZHE
+#  php_value display_errors 1
+
+RewriteEngine On
+
+########## Begin - Rewrite rules to block out some common exploits
+## If you experience problems on your site block out the operations listed below
+## This attempts to block the most common type of exploit `attempts` to Joomla!
+#
+# Block out any script trying to set a mosConfig value through the URL
+RewriteCond %{QUERY_STRING} mosConfig_[a-zA-Z_]{1,21}(=|\%3D) [OR]
+# Block out any script trying to base64_encode crap to send via URL
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [OR]
+# Block out any script that includes a <script> tag in URL
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+# Block out any script trying to set a PHP GLOBALS variable via URL
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+# Block out any script trying to modify a _REQUEST variable via URL
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+# Send all blocked request to homepage with 403 Forbidden error!
+RewriteRule ^(.*)$ /index.php [F,L]
+#
+########## End - Rewrite rules to block out some common exploits
+
+#  Uncomment following line if your webserver's URL
+#  is not directly related to physical file paths.
+#  Update Your Joomla! Directory (just / for root)
+
+# RewriteBase /
+########## Begin - Joomla! core SEF Section
+#
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/index.php
+RewriteCond %{REQUEST_URI} (/|\.php|\.html|\.htm|\.feed|\.pdf|\.raw|/[^.]*)$  [NC]
+RewriteRule (.*) /index.php
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+#
+########## End - Joomla! core SEF Section
+
+
+
+
+
+
+
+
+
