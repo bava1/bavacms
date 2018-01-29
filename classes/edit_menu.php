@@ -9,12 +9,12 @@ class edit_menu extends Adminer {
 		echo "<div class='content'>";	
 		echo "<div class='main'>";
 		echo "<div class='cat2' style='font-size: 24px'><a style='color: green' href='?options=add_menu'>
-		Добавить новый пункт меню:</a></div>";
-		echo "<div class='cat2' style='font-size: 24px'>Список пунктов меню доступных для изменения:</div>";
+		Add a new menu item :</a></div>";
+		echo "<div class='cat2' style='font-size: 24px'>List of menu items available for modification :</div>";
 		$query = "SELECT id_menu, name_menu FROM menu";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {
-			exit('Не удалось получить в админ статьи');
+			exit('Failed to get menu items');
 		}
 		//Получаем список пунктов меню для редактирования
 		//Get a list of menu items for editing
@@ -23,7 +23,7 @@ class edit_menu extends Adminer {
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 			printf("<div class='cat2'><p style='font-size: 18px;'><a style='color: green' 
 				href='?options=update_menu&id_text=%s'>%s</a>
-				<a class='cat4' href='?options=delete_menu&id_text=%s'>| Удалить пункт меню</a>
+				<a class='cat4' href='?options=delete_menu&id_text=%s'>| Delete the menu item</a>
 				</p></div>", $row['id_menu'], $row['name_menu'], $row['id_menu']);
 		}
 		echo "</div>";	

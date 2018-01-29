@@ -37,6 +37,7 @@ hr {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
+	height: 4.5%;
 	background-color: #3CB371;
 	box-shadow: 0 0 6px rgba(0,0,0,0.7);
 }
@@ -71,7 +72,7 @@ hr {
 	background-color: #33ff99;	
 }
 .menu-left-main {
-	width: 60%;
+	width: 65%;
 	margin: 20px auto;
 	font-size: 1.4vw;
 }
@@ -98,11 +99,11 @@ img {
 }
 .menu-rigth-main {
 	width: 100%;
-	font-size: 1.4vw;
+	font-size: 1.3vw;
 }
 
 .cat {
-	margin: 1% 4% 1% 1%;
+	margin: 1% 3% 1% 1%;
 	padding: 7%;
 	color: #000;
 	border-bottom: 3px solid #2E8B57;
@@ -218,6 +219,9 @@ a {
 	.header-menu {
 		width: 90%;
 		font-size: 4vw;
+	}
+	.header-main {
+		height: auto;
 	}
 	.menu-but {
 		display: block;

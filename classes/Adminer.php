@@ -27,7 +27,7 @@ abstract class Adminer {
 		}	
 		$this->db = mysqli_connect(HOST, USER, PASSWORD, BASE) or die ('No CONNECT !!!!');
 		if (!$this->db) {
-			exit('Нет подключения к базе!');
+			exit('No connection to the database!');
 		}
 		mysqli_query($this->db, "SET NAMES 'UTF8'");
 	}
@@ -41,14 +41,14 @@ abstract class Adminer {
 		echo "</div>";
 		echo "<div class='menu-rigth'>";
 		echo "<div class='menu-rigth-main'>";
-		echo "<div class='cat'><a href='?options=main'>На главную страницу</a></div>";
-		echo "<div class='cat'><a href='?options=admin'>Админ панель для управления сайтом<br>
-		<br>Редактировать:</a></div>";
-		echo "<div class='cat'><a href='?options=edit_stati'>Статьи</a></div>";
-		echo "<div class='cat'><a href='?options=edit_menu'>Меню</a></div>";
-		echo "<div class='cat'><a href='?options=edit_category'>Категории</a></div>";
-		echo "<div class='cat'><a href='?options=set'>Настройки сайта</a></div>";
-		echo "<div class='cat'><a href='?options=faq'>Инструкция</a></div>";
+		echo "<div class='cat'><a href='?options=main'>To Home Page</a></div>";
+		echo "<div class='cat'><a href='?options=admin'>Admin panel for site management<br>
+		<br>Redact :</a></div>";
+		echo "<div class='cat'><a href='?options=edit_stati'>Articles</a></div>";
+		echo "<div class='cat'><a href='?options=edit_menu'>Menu items</a></div>";
+		echo "<div class='cat'><a href='?options=edit_category'>Categories</a></div>";
+		echo "<div class='cat'><a href='?options=set'>Basic site settings</a></div>";
+		echo "<div class='cat'><a href='?options=faq'>Instructions</a></div>";
 		echo "</div>";
 		echo "</div>";
 	}
@@ -76,7 +76,7 @@ abstract class Adminer {
 		$query = "SELECT id_category, name_category FROM category";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {
-			exit('Не удалось получить кактегории');
+			exit('Could not retrieve categories');
 		}
 
 		$row = array();
@@ -93,7 +93,7 @@ abstract class Adminer {
 		$query = "SELECT id, title, description, text, cat FROM stati WHERE id='$id'";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {
-			exit('Не удалось текст статьи для изменения !!!');
+			exit('Could not get the text of the article for change !!!');
 		}
 		$row = array();
 		$row = $result->fetch_array(MYSQLI_ASSOC);
@@ -107,7 +107,7 @@ abstract class Adminer {
 		$query = "SELECT id_menu, name_menu, text_menu FROM menu WHERE id_menu='$id'";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {
-			exit('Не удалось текст статьи для изменения !!!');
+			exit('Could not get the menu to change !!!');
 		}
 		$row = array();
 		$row = $result->fetch_array(MYSQLI_ASSOC);
@@ -120,7 +120,7 @@ abstract class Adminer {
 		$query = "SELECT id_category, name_category FROM category WHERE id_category='$id'";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {//Проверяем его 
-			exit('Не удалось текст статьи для изменения !!!');
+			exit('Could not get categories for change !!!');
 		}
 		$row = array();
 		$row = $result->fetch_array(MYSQLI_ASSOC);

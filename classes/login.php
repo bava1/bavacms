@@ -17,22 +17,24 @@ class login extends Adminer {
 			$query = "SELECT id FROM user WHERE login='$login' AND password='$password'";
 			$result = mysqli_query($this->db, $query);
 			if (!$result) {
-				exit('Не удалось соединиться с базой !!!');
+				exit('Could not connect to the database !!!.');
 			}
 			if (mysqli_num_rows($result) == 1) {
 				$_SESSION['user'] = TRUE;
 				echo "<div class='footer' style='margin-top: -70px; height: 900px'>";	
 				echo "<div class='footer-main' style='width: 300px'>";
 				echo "<div class='cat3'><a href='?options=admin' style='margin: 20px; color: #000'>
-				Войти в админ панель</a></div>";
+				Log in to the admin panel</a></div>";
 				echo "</div>";
 				echo "</div>";	
 				exit();				
 			} else {
-				echo "<div class='cat3' style='position: absolute; margin: 60px'>Такого пользователя нет. Иди гуляй!!!</div>";
+				echo "<div class='cat3' style='position: absolute; margin: 60px'>There is no such user. 
+				Go away!!!</div>";
 			}
 		} else {
-				echo "<div class='cat3' style='position: absolute; margin: 60px'>Вы не ввели логин или пароль !!!
+				echo "<div class='cat3' style='position: absolute; margin: 60px'>You did not enter login 
+				or password !!!
 				</div>";
 		}
 	}
@@ -48,20 +50,20 @@ class login extends Adminer {
 		echo "<div class='footer' style='margin-top: -70px; height: 900px'>";	
 		echo "<div class='footer-main' style='width: 300px'>";
 		echo "<div style='font-size: 24px; margin-top: -200px; text-align: center; color: #fff'>
-		Авторизация админа:</div>";
+		Authorization of the administrator :</div>";
 
 		print <<<HEREDOC
 			<form action="" method="POST" style="margin: 30px">
-				<p style="color: #fff; width: 236px; text-align: center; font-size: 18px;">Введите логин :<br>
+				<p style="color: #fff; width: 236px; text-align: center; font-size: 18px;">Enter login :<br>
 				<br>
-					<input type="text" name="login" style="width: 242px; height: 25px">
+					<input type="text" name="login" style="width: 242px; height: 25px; text-align: center">
 				</p><br>		
-				<p style="color: #fff; width: 236px; text-align: center; font-size: 18px;">Введите пароль :<br>
+				<p style="color: #fff; width: 236px; text-align: center; font-size: 18px;">Enter password :<br>
 				<br>
-					<input type="password" name="password" style="width: 242px; height: 25px">
+					<input type="password" name="password" style="width: 242px; height: 25px; text-align: center">
 				</p><br>
 				<p><input type='submit' style="width: 250px; height: 40px; margin-top: 20px" name='button' 
-				value='Войти в административную панель'></p>
+				value='Login to the administrative panel'></p>
 			</form>
 HEREDOC;
 		echo "</div>";

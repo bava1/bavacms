@@ -9,18 +9,21 @@ class admin extends Adminer {
 		echo "<div class='content'>";	
 		echo "<div class='main'>";
 		echo "<img src='images/logo1.png' style='max-width: 520px; box-shadow: none'>";
-		echo "<div class='cat2'style='font-size: 30px'>Добро пожаловать в административную панель bava.cms 
-		вашего сайта.</div>";
-		echo "<div class='cat2' style='font-size: 24px'>Отсюда мы можете управлять содержимым сайта и 
-		настраивать его на ваш вкус.<br>
-		С помощью меню, в правой части панели вы можете добавлять, редактировать и удалаять статьи, категории и 
-		пункты меню. А так же изменить внешний вид вашего сайта, логи и пароль к административной панели в
-		Настройки сайта.</div>";
+		echo "<div class='cat2'style='font-size: 30px'>Welcome to the administrative panel of bava.cms 
+		of your site.</div>";
+		echo "<div class='cat2' style='font-size: 24px'>From here you can manage the content of the site 
+		and customize it for your taste.<br>
+		From here we can manage the content of the site and customize it for your taste.
+		With the help of the menu, in the right part of the panel you can add, edit and delete 
+		articles, categories and menu items. And also change the appearance of your site, logs and 
+		password to the administrative panel in Site Settings.
+		</div>";
 		echo "<div class='cat2' style='font-size: 24px; color: #000'><a style='color: #000'href='?options=faq'>
-		FAQ по bava.cms :<br>1. Добавление контента<br>2. Редактирование контента<br>3. Удаление контента
-		<br>4. Основные настройки вашего сайта<br>5. Подключение сайта<br>6. Работа с базой данных</a></div>";
-		echo "<div class='cat2' style='font-size: 24px'>bava.cms разработана в студии bava.<br>Данная 
-		система управления контентом является абсолютно бесплатной.</div>";
+		FAQ on bava.cms :<br>1. Adding content<br>2. Editing content<br>3. Deleting content
+		<br>4. Basic settings of your site<br>5. Connecting the Site<br>6. Working with the database</a></div>";
+		echo "<div class='cat2' style='font-size: 24px'>The bava.cms you use is developed in the bava studio.<br>
+		This content management system is absolutely free.
+		</div>";
 		echo "</div>";	
 		echo "</div>";
 	}

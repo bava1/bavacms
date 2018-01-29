@@ -13,9 +13,8 @@
 	<div class="wrap">
 		<div class="header">
 			<div class="header-main">
-				<div class="header-menu">
-					<div class="menu-but"></div>				
-				</div>
+				<div class="header-menu"></div>
+				<div class="menu-but"></div>
 			</div>
 		</div>
 

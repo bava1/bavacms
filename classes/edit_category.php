@@ -10,21 +10,21 @@ class edit_category extends Adminer {
 		echo "<div class='content'>";	
 		echo "<div class='main'>";
 		echo "<div div class='cat2' style='font-size: 24px'><a style='color: green' href='?options=add_category'>
-		Добавить новую категорию:</a></div>";
-		echo "<div div class='cat2' style='font-size: 24px'>Список категорий доступных для изменения:</div>";
+		Add a new category :</a></div>";
+		echo "<div div class='cat2' style='font-size: 24px'>List of categories available for change :</div>";
 		$query = "SELECT id_category, name_category FROM category";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {
-			exit('Не удалось получить в админ статьи');
+			exit('Could not retrieve articles');
 		}
 		//Получаем список статей для редактирования и удаления
 		//Get the list of articles for editing and deleting
 		$row = array();
 		for ($i=0; $i < mysqli_num_rows($result); $i++) {
 			$row = $result->fetch_array(MYSQLI_ASSOC);
-			printf("<div class='cat2'><p style='font-size: 18px'>ID категории: "."$row[id_category]".
+			printf("<div class='cat2'><p style='font-size: 18px'>Category ID : "."$row[id_category]".
 				"<a style='margin-left: 20px; color: green' href='?options=update_category&id_text=%s'>%s</a> 
-				<a class='cat4' href='?options=delete_category&id_text=%s'>| Удалить категорию</a>
+				<a class='cat4' href='?options=delete_category&id_text=%s'>| Remove</a>
 				</p></div>", $row['id_category'], $row['name_category'], $row['id_category']);
 		}
 

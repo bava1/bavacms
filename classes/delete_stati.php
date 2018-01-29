@@ -13,18 +13,18 @@ class delete_stati extends Adminer {
 				echo "<div class='content'>
 					<div class='main'>
 					<img src='images/logo1.png' style='max-width: 320px; box-shadow: none; margin-top: -60px'>
-					<div class='cat3'>Статья успешно удалена !!!</div>
-					<div class='cat3'><a style='color: #000' href='?options=edit_stati'>Вернуться к 
-					редактированию других статей.</a></div>
-					<div class='cat3'><a style='color: #000' href='?options=admin'>Вернуться в 
-					административную панель.</a></div>
+					<div class='cat3'>The article was successfully deleted !!!</div>
+					<div class='cat3'><a style='color: #000' href='?options=edit_stati'>Go back to editing 
+					other articles.</a></div>
+					<div class='cat3'><a style='color: #000' href='?options=admin'>Return to the 
+					administrative panel.</a></div>
 					</div></div>";
 				exit;
 			} else {
-				exit('Не могу удалить статью !!!');
+				exit('I can not delete the article !!!');
 			}
 		} else {
-			exit('Нет данных для удаления статьи !!!');
+			exit('I can not delete the article !!!');
 		}
 	}
 }

@@ -13,18 +13,18 @@ class delete_category extends Adminer {
 				echo "<div class='content'>
 					<div class='main'>
 					<img src='images/logo1.png' style='max-width: 320px; box-shadow: none; margin-top: -60px'>
-					<div class='cat3'>Категория успешно удалена !!!</div>
-					<div class='cat3'><a style='color: #000' href='?options=edit_category'>Вернуться в 
-					к редактированию других категорий.</a></div>
-					<div class='cat3'><a style='color: #000' href='?options=admin'>Вернуться в 
-					административную панель.</a></div></div>
+					<div class='cat3'>Category successfully deleted !!!</div>
+					<div class='cat3'><a style='color: #000' href='?options=edit_category'>Go back to 
+					editing other categories.</a></div>
+					<div class='cat3'><a style='color: #000' href='?options=admin'>Return to the 
+					administrative panel.</a></div></div>
 					</div></div>";
 				exit();
 			} else {
-				exit('Не могу удалить данную категорию !!!');
+				exit('I can not delete this category !!!');
 			}
 		} else {
-			exit('Нет данных для удаления категории !!!');
+			exit('I can not delete this category !!!');
 		}
 	}
 }

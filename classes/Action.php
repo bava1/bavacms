@@ -8,7 +8,7 @@ abstract class Action {
 	public function __construct() {
 		$this->db = mysqli_connect(HOST, USER, PASSWORD, BASE) or die ('No CONNECT !!!!');
 		if (!$this->db) {
-			exit('Нет подключения к базе!');
+			exit('No connection to the database !');
 		}
 		mysqli_query($this->db, "SET NAMES 'UTF8'");
 	}
@@ -20,7 +20,7 @@ abstract class Action {
 		$query = "SELECT name_templ FROM templ";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {
-			exit('Не удалось получить категории');
+			exit('Could not get categories!');
 		}
 		$row = $result->fetch_array(MYSQLI_ASSOC);
 		include ("templ/".$row['name_templ']."/header.".$row['name_templ'].".php");
@@ -36,7 +36,7 @@ abstract class Action {
 		$query = "SELECT id_menu, name_menu FROM menu";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {
-			exit('Не удалось получить категории');
+			exit('Could not get categories!');
 		}
 		//Формируем массив с пунктами меню
 		//Form an array with menu items
@@ -53,9 +53,9 @@ abstract class Action {
 		$row = $this->menu_array();
 		echo "<div class='header-main'>";
 		echo "<div class='header-menu'>";
-		echo "<div class='head1'><a href='?options=main'>Главная</a></div>";
+		echo "<a href='?options=main'><div class='head1'>Home</div></a>";
 		foreach ($row as $item) {
-			printf("<div class='head1'>&nbsp<a href='?options=menu&id_menu=%s'>%s</a></div>", 
+			printf("<a href='?options=menu&id_menu=%s'><div class='head1'>&nbsp%s</div></a>", 
 				$item['id_menu'], $item['name_menu']);
 		}
 		echo "</div>";
@@ -69,12 +69,12 @@ abstract class Action {
 		$query = "SELECT id_category, name_category FROM category";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {
-			exit('Не удалось получить категории');
+			exit('Could not get categories!');
 		}
 		$row = array();
 		echo "<div class='menu-rigth'>";
 		echo "<div class='menu-rigth-main'>";
-		echo "<div class='cat' style='color: #000'>Категории статей :</div>";
+		echo "<div class='cat' style='color: #000'>Categories of articles :</div>";
 		for ($i=0; $i < mysqli_num_rows($result); $i++) {
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 			printf("<div class='cat'><a href='?options=category&id_category=%s' style='color: #000'>
@@ -88,8 +88,8 @@ abstract class Action {
 	//Основной метод вывода всего контента через index.php
 	//The main method for displaying all content via index.php
 	public function get_Body() {
-		$this->get_Menu();//Вывод главного меню//Main menu output
 		$this->get_Header();//Вывод головы//Head Extraction
+		$this->get_Menu();//Вывод главного меню//Main menu output
 		$this->get_Content();//Вывод оснновного содержимого//Basic content output	
 		$this->get_Right();//Вывод меню категорий//Display Category Menu
 		$this->get_Footer();//Вывод нижней части подвала//Output of the bottom	
@@ -105,7 +105,7 @@ abstract class Action {
 		$query = "SELECT name_templ FROM templ";
 		$result = mysqli_query($this->db, $query);
 		if (!$result) {
-			exit('Не удалось получить категории');
+			exit('Could not get categories!');
 		}
 		$row = $result->fetch_array(MYSQLI_ASSOC);
 		include ("templ/".$row['name_templ']."/footer.".$row['name_templ'].".php");

@@ -13,18 +13,18 @@ class delete_menu extends Adminer {
 				echo "<div class='content'>
 					<div class='main'>
 					<img src='images/logo1.png' style='max-width: 320px; box-shadow: none; margin-top: -60px'>
-					<div class='cat3'>Пункт меню успешно удаленн !!!</div>
-					<div class='cat3'><a style='color: #000' href='?options=edit_menu'>Вернуться в 
-					к редактированию пунктов меню.</a></div>
-					<div class='cat3'><a style='color: #000' href='?options=admin'>Вернуться в 
-					административную панель.</a></div>
+					<div class='cat3'>Menu item was successfully deleted !!!</div>
+					<div class='cat3'><a style='color: #000' href='?options=edit_menu'>Return to editing 
+					menu items.</a></div>
+					<div class='cat3'><a style='color: #000' href='?options=admin'>Return to the 
+					administrative panel.</a></div>
 					</div></div>";
 				exit();
 			} else {
-				exit('Не могу удалить пункт меню !!!');
+				exit('Can not delete the menu item !!!');
 			}
 		} else {
-			exit('Нет данных для удаления пункта меню !!!');
+			exit('Can not delete the menu item !!!');
 		}
 	}
 }

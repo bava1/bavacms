@@ -5,20 +5,20 @@ class category extends Action {
 	public function get_Content() {
 		echo "<div class='content'>";	
 		echo "<div class='main'>";
-		echo "<div class='cat2' style='padding: 13px 2%'><p style='font-size: 30px; margin-left: 10px'>Все 
-		статьи из этой категории :</p></div>";
+		echo "<div class='cat2' style='padding: 13px 2%'><p style='font-size: 30px; margin-left: 10px'>
+		All articles from this category:</p></div>";
 		if (!$_GET['id_category']) {
-			echo 'Не правильные данные для вывода статьи1';
+			echo "Wrong data for the article's output !!!";
 		} else {
 			$id_cat = (int)$_GET['id_category'];
 			if (!$id_cat) {
-				echo 'Не правильные данные для вывода статьи2';
+				echo "Wrong data for the article's output !!!";
 			} else {
 				$query = "SELECT id, title, img_src, description, date FROM stati WHERE cat='$id_cat' ORDER 
 				BY date DESC";
 				$result = mysqli_query($this->db,$query);
 				if (!$result) {
-					exit('Не удалось получить статьи');
+					exit('Could not retrieve articles');
 				}
 				if (mysqli_num_rows($result) > 0) {
 					$row = array();		
@@ -33,12 +33,12 @@ class category extends Action {
 							<img src='%s' style='width: 150px; float: left; margin-right: 20px; margin-bottom: 10px'>
 							<p style='font-size: 18px'>%s</p><br>
 							<p style='font-size: 18px; color: red'><a style='color: 
-							#000' href='?options=view&id_text=%s'>Читать далее.....</a></p>
+							#000' href='?options=view&id_text=%s'>Read more.....</a></p>
 							</div>", $row['title'], $row['date'], $row['img_src'], $row['description'], 
 							$row['id']);
 					}
 				} else {
-					echo 'К сожадению в этом разделе еще нет статей';
+					echo 'Unfortunately there are no articles in this section yet';
 				}
 			}
 		}

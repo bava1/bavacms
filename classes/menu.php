@@ -8,21 +8,21 @@ class menu extends Action {
 		echo "<div class='content'>";	
 		echo "<div class='main'>";
 		if (!$_GET['id_menu']) {
-				echo 'Не правильные данные для вывода меню';
+				echo 'Wrong data for displaying the menu !!!';
 		} else {
 			$id_menu = (int)$_GET['id_menu'];
 			if (!$id_menu) {
-				echo 'Не правильные данные для вывода меню';
+				echo 'Wrong data for displaying the menu !!!';
 			} else {
 				$query = "SELECT id_menu, name_menu, img_src, text_menu FROM menu WHERE id_menu='$id_menu'";
 				$result = mysqli_query($this->db, $query);
 				if (!$result) {
-					exit('Не правильные данные для вывода меню');
+					exit('Wrong data for displaying the menu !!!');
 				}
 				$row = $result->fetch_array(MYSQLI_ASSOC);
 				printf("<div class='cat2'>
 						<p style='font-size: 30px'>%s</p><br>
-						<img src='%s' style='width: 288px; float: left; margin-right: 20px; margin-bottom: 5px'>
+						<img src='%s' style='width: 288px; float: left; margin-right: 20px; margin-bottom: 9px'>
 						<p>%s</p>
 						</div>", $row['name_menu'], $row['img_src'], $row['text_menu']);
 			}

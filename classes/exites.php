@@ -8,9 +8,9 @@ class exites extends Adminer {
 		$_SESSION['user'] = FALSE;
 		echo "<div class='content'>";	
 		echo "<div class='main'>";
-		echo "<div class='cat2'>Вы покинули панель администратора</a></div>";
-		echo "<div class='cat2'><a style='color: #000' href='?options=main'>На главную страницу</a></div>";
-		echo "<div class='cat2'><a style='color: #000' href='?options=admin'>На страницу авторизации</a></div>";
+		echo "<div class='cat2'>You left the admin panel</a></div>";
+		echo "<div class='cat2'><a style='color: #000' href='?options=main'>To Home Page</a></div>";
+		echo "<div class='cat2'><a style='color: #000' href='?options=admin'>To the authorization page</a></div>";
 		echo "</div>";	
 		echo "</div>";
 	}
